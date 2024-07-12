@@ -2,7 +2,7 @@ name: Build Wheel Tree
 on:
   push:
     branches:
-      - main1
+      - main
     tags:
       - '**'
   pull_request:
@@ -14,7 +14,7 @@ concurrency:
 
 jobs:
   build-wheels:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     container: quay.io/pypa/manylinux_2_24_x86_64
     steps:
       - name: Add safe git directory

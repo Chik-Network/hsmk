@@ -4,7 +4,7 @@ from typing import Dict, List
 
 from chia_base.bls12_381 import BLSPublicKey, BLSSecretExponent
 
-from hsms.clvm_serde import Frugal
+from hsmk.klvm_serde import Frugal
 
 
 @dataclass

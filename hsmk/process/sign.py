@@ -6,12 +6,12 @@ from chia_base.atoms import hexbytes
 from chia_base.bls12_381 import BLSPublicKey, BLSSecretExponent
 from chia_base.core import CoinSpend
 
-from clvm_rs import Program  # type: ignore
+from klvm_rs import Program  # type: ignore
 
-from hsms.core.signing_hints import SumHint, SumHints, PathHint, PathHints
-from hsms.core.unsigned_spend import SignatureInfo, UnsignedSpend
-from hsms.consensus.conditions import conditions_by_opcode
-from hsms.puzzles.conlang import AGG_SIG_ME, AGG_SIG_UNSAFE
+from hsmk.core.signing_hints import SumHint, SumHints, PathHint, PathHints
+from hsmk.core.unsigned_spend import SignatureInfo, UnsignedSpend
+from hsmk.consensus.conditions import conditions_by_opcode
+from hsmk.puzzles.conlang import AGG_SIG_ME, AGG_SIG_UNSAFE
 
 MAX_COST = 1 << 34
 

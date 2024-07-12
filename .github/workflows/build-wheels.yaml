@@ -4,7 +4,7 @@ name: Build Wheel
 on:
   push:
     branches:
-      - main
+      - main1
   release:
     types: [published]
   pull_request:

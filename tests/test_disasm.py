@@ -1,6 +1,6 @@
-from clvm_rs import Program
+from klvm_rs import Program
 
-from hsms.clvm.disasm import disassemble
+from hsmk.klvm.disasm import disassemble
 
 
 def check_disassemble(h, s):

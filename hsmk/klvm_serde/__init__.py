@@ -4,7 +4,7 @@ from typing import Any, Callable, Optional, Tuple, Type, Union, get_type_hints
 from chia_base.meta.type_tree import ArgsType, CompoundLookup, OriginArgsType, TypeTree
 from chia_base.meta.typing import GenericAlias
 
-from clvm_rs import Program  # type: ignore
+from klvm_rs import Program  # type: ignore
 
 ToProgram = Callable[[Any], Program]
 FromProgram = Callable[[Program], Any]

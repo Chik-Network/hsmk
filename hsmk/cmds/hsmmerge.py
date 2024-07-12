@@ -6,9 +6,9 @@ from chia_base.bls12_381 import BLSSignature
 from chia_base.core import SpendBundle
 from chia_base.cbincode import to_bytes
 
-from hsms.core.unsigned_spend import UnsignedSpend
-from hsms.process.sign import generate_synthetic_offset_signatures
-from hsms.util.qrint_encoding import a2b_qrint
+from hsmk.core.unsigned_spend import UnsignedSpend
+from hsmk.process.sign import generate_synthetic_offset_signatures
+from hsmk.util.qrint_encoding import a2b_qrint
 
 
 def create_spend_bundle(unsigned_spend: UnsignedSpend, signatures: List[BLSSignature]):
@@ -31,7 +31,7 @@ def file_or_string(p) -> str:
     return text
 
 
-def hsmsmerge(args, parser):
+def hsmkmerge(args, parser):
     blob = a2b_qrint(file_or_string(args.unsigned_spend))
     unsigned_spend = UnsignedSpend.from_bytes(blob)
     signatures = [
@@ -64,7 +64,7 @@ def create_parser():
 def main():
     parser = create_parser()
     args = parser.parse_args()
-    return hsmsmerge(args, parser)
+    return hsmkmerge(args, parser)
 
 
 if __name__ == "__main__":

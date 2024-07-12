@@ -1,7 +1,7 @@
 import argparse
 import os.path
 
-from hsms.util.qrint_encoding import a2b_qrint, b2a_qrint
+from hsmk.util.qrint_encoding import a2b_qrint, b2a_qrint
 
 
 def file_or_string(p) -> str:

@@ -1,6 +1,6 @@
 from typing import Any, Callable, Dict, List, Tuple, TypeVar
 
-from clvm_rs import Program
+from klvm_rs import Program
 
 
 K = TypeVar("K")
@@ -14,7 +14,7 @@ def transform_dict(program, dict_transformer_f):
     where the keys match the keys in d and the values of d are transformed
     by invoking the corresponding values in xformer.
     """
-    r = clvm_to_list(program, lambda x: dict_transformer_f(x.pair[0], x.pair[1]))
+    r = klvm_to_list(program, lambda x: dict_transformer_f(x.pair[0], x.pair[1]))
     d = dict(r)
     return d
 
@@ -47,7 +47,7 @@ def transform_as_struct(items: Program, *struct_transformers) -> Tuple[Any, ...]
     return tuple(r)
 
 
-def clvm_to_list(
+def klvm_to_list(
     item_list: Program, item_transformation_f: Callable[[Program], T]
 ) -> List[T]:
     r = []
@@ -57,8 +57,8 @@ def clvm_to_list(
     return r
 
 
-def clvm_to_list_of_ints(items: Program) -> List[int]:
-    return clvm_to_list(items, lambda obj: Program.to(obj).as_int())
+def klvm_to_list_of_ints(items: Program) -> List[int]:
+    return klvm_to_list(items, lambda obj: Program.to(obj).as_int())
 
 
 def no_op(x):

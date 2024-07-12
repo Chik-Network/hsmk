@@ -3,9 +3,9 @@ from typing import Dict, List
 
 from chia_base.bls12_381 import BLSPublicKey, BLSSecretExponent
 
-from .clvm_serialization import (
-    clvm_to_list_of_ints,
-    clvm_to_list,
+from .klvm_serialization import (
+    klvm_to_list_of_ints,
+    klvm_to_list,
 )
 
 
@@ -22,7 +22,7 @@ class SumHint:
 
     @classmethod
     def from_program(cls, program) -> "SumHint":
-        public_keys = clvm_to_list(
+        public_keys = klvm_to_list(
             program.pair[0], lambda x: BLSPublicKey.from_bytes(x.atom)
         )
         synthetic_offset = BLSSecretExponent.from_bytes(program.pair[1].atom)
@@ -43,7 +43,7 @@ class PathHint:
     @classmethod
     def from_program(cls, program) -> "PathHint":
         root_public_key = BLSPublicKey.from_bytes(program.pair[0].atom)
-        path = clvm_to_list_of_ints(program.pair[1])
+        path = klvm_to_list_of_ints(program.pair[1])
         return cls(root_public_key, path)
 
 

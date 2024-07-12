@@ -4,9 +4,9 @@ from typing import List, Tuple
 from chia_base.bls12_381 import BLSPublicKey, BLSSignature
 from chia_base.core import Coin, CoinSpend
 
-from clvm_rs import Program  # type: ignore
+from klvm_rs import Program  # type: ignore
 
-from hsms.clvm_serde import (
+from hsmk.klvm_serde import (
     to_program_for_type,
     from_program_for_type,
 )

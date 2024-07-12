@@ -56,7 +56,7 @@ class TestCmds(unittest.TestCase):
         sys.stderr = stderr_buffer
 
         args = shlex.split(cmd_line)
-        f = pkg_resources.load_entry_point("hsms", "console_scripts", args[0])
+        f = pkg_resources.load_entry_point("hsmk", "console_scripts", args[0])
         v = f(args[1:])
 
         sys.stdout = old_stdout

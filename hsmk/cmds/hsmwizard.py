@@ -9,7 +9,7 @@ import segno
 
 from chia_base.bls12_381 import BLSSecretExponent
 
-import hsms.cmds.hsms
+import hsmk.cmds.hsmk
 
 
 def wait_for_usb_mount(parser, mount_path, device_to_mount, mount_command_read_only):
@@ -63,7 +63,7 @@ def generate_secret(wallet_path):
 
 def create_parser():
     parser = argparse.ArgumentParser(
-        description="Wizard to look for USB mount point and key file and launch hsms"
+        description="Wizard to look for USB mount point and key file and launch hsmk"
     )
     parser.add_argument(
         "-d",
@@ -108,9 +108,9 @@ def main():
             parser, mount_path, Path(args.device_to_mount), args.mount_command_read_only
         )
     if wallet_path.exists():
-        parser = hsms.cmds.hsms.create_parser()
+        parser = hsmk.cmds.hsmk.create_parser()
         args = parser.parse_args(["--qr", str(wallet_path)])
-        hsms.cmds.hsms.hsms(args, parser)
+        hsmk.cmds.hsmk.hsmk(args, parser)
     else:
         if args.remount_command_read_write:
             cmd = args.remount_command_read_write.format(

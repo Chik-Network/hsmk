@@ -1,4 +1,4 @@
-from hsms.util.qrint_encoding import a2b_qrint, b2a_qrint, b2a_qrint_payload
+from hsmk.util.qrint_encoding import a2b_qrint, b2a_qrint, b2a_qrint_payload
 
 from .generate import bytes32_generate
 

@@ -4,16 +4,16 @@ import pathlib
 import tempfile
 import zlib
 
-from clvm_rs import Program
+from klvm_rs import Program
 
-from hsms.process.sign import verify_pairs_for_conditions
-from hsms.puzzles.conlang import AGG_SIG_ME, AGG_SIG_UNSAFE
-from hsms.puzzles.p2_delegated_puzzle_or_hidden_puzzle import (
+from hsmk.process.sign import verify_pairs_for_conditions
+from hsmk.puzzles.conlang import AGG_SIG_ME, AGG_SIG_UNSAFE
+from hsmk.puzzles.p2_delegated_puzzle_or_hidden_puzzle import (
     calculate_synthetic_secret_key,
     solution_for_hidden_puzzle,
 )
-from hsms.puzzles.p2_conditions import solution_for_conditions
-from hsms.util.byte_chunks import (
+from hsmk.puzzles.p2_conditions import solution_for_conditions
+from hsmk.util.byte_chunks import (
     blob_for_chunks,
     blob_for_zlib_chunks,
     create_chunks_for_blob,
@@ -91,10 +91,10 @@ def test_aggsig_me_conditions():
     assert pairs == [(pk_1, msg1), (pk_2, msg2)]
 
 
-def test_hsms_dump_us():
+def test_hsmk_dump_us():
     # for some reason, if this import is move to the global scope,
     # the `test_cmd` test fails. Maybe the stdout capture fails?
-    from hsms.cmds import hsm_dump_us
+    from hsmk.cmds import hsm_dump_us
 
     where = pathlib.Path(__file__)
     d = (where.parent / "cmds" / "hsm_dump_us_1.txt").read_text()

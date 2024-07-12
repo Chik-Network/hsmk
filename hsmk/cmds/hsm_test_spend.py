@@ -3,25 +3,25 @@ import hashlib
 import sys
 import zlib
 
-from clvm_rs import Program  # type: ignore
+from klvm_rs import Program  # type: ignore
 
 from chia_base.bls12_381 import BLSPublicKey
 from chia_base.core import Coin, CoinSpend
 
-from hsms.core.signing_hints import SumHint, PathHint
-from hsms.core.unsigned_spend import UnsignedSpend
-from hsms.puzzles.p2_delegated_puzzle_or_hidden_puzzle import (
+from hsmk.core.signing_hints import SumHint, PathHint
+from hsmk.core.unsigned_spend import UnsignedSpend
+from hsmk.puzzles.p2_delegated_puzzle_or_hidden_puzzle import (
     DEFAULT_HIDDEN_PUZZLE,
     puzzle_for_public_key_and_hidden_puzzle,
     solution_for_conditions,
     calculate_synthetic_offset,
 )
-from hsms.puzzles.conlang import CREATE_COIN
-from hsms.util.byte_chunks import (
+from hsmk.puzzles.conlang import CREATE_COIN
+from hsmk.util.byte_chunks import (
     create_chunks_for_blob,
     optimal_chunk_size_for_max_chunk_size,
 )
-from hsms.util.qrint_encoding import b2a_qrint
+from hsmk.util.qrint_encoding import b2a_qrint
 
 MAINNET_AGG_SIG_ME_ADDITIONAL_DATA = bytes.fromhex(
     "ccd5bb71183532bff220ba46c268991a3ff07eb358e8255a65c30a2dce0e5fbb"

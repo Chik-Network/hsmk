@@ -3,12 +3,12 @@ from typing import List
 from chia_base.core import Coin
 from chia_base.util.std_hash import std_hash
 
-from clvm_rs import Program  # type: ignore
+from klvm_rs import Program  # type: ignore
 
-from hsms.clvm.disasm import disassemble as bu_disassemble, KEYWORD_FROM_ATOM
-from hsms.consensus.conditions import conditions_by_opcode
-from hsms.process.sign import generate_verify_pairs
-from hsms.puzzles import conlang
+from hsmk.klvm.disasm import disassemble as bu_disassemble, KEYWORD_FROM_ATOM
+from hsmk.consensus.conditions import conditions_by_opcode
+from hsmk.process.sign import generate_verify_pairs
+from hsmk.puzzles import conlang
 
 KFA = {bytes([getattr(conlang, k)]): k for k in dir(conlang) if k[0] in "ACR"}
 
@@ -50,7 +50,7 @@ def debug_spend_bundle(
 ) -> None:
     """
     Print a lot of useful information about a `SpendBundle` that might help with
-    debugging its clvm.
+    debugging its klvm.
     """
 
     pks = []

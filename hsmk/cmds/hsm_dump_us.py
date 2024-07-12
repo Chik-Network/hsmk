@@ -2,9 +2,9 @@ import argparse
 import sys
 import zlib
 
-from hsms.cmds.hsms import summarize_unsigned_spend
-from hsms.core.unsigned_spend import UnsignedSpend
-from hsms.util.qrint_encoding import a2b_qrint
+from hsmk.cmds.hsmk import summarize_unsigned_spend
+from hsmk.core.unsigned_spend import UnsignedSpend
+from hsmk.util.qrint_encoding import a2b_qrint
 
 
 def file_or_string(p) -> str:
@@ -24,7 +24,7 @@ def fromhex_or_qrint(s: str) -> bytes:
     return bytes.fromhex(s)
 
 
-def hsms_dump_us(args, parser):
+def hsmk_dump_us(args, parser):
     """
     Try to handle input in qrint or hex, with or without zlib compression
     """
@@ -52,7 +52,7 @@ def create_parser():
 def main(argv=sys.argv[1:]):
     parser = create_parser()
     args = parser.parse_args(argv)
-    return hsms_dump_us(args, parser)
+    return hsmk_dump_us(args, parser)
 
 
 if __name__ == "__main__":  # pragma: no cover

@@ -5,18 +5,18 @@ from tests.generate import se_generate, bytes32_generate, uint256_generate
 from chia_base.core import Coin, CoinSpend, SpendBundle
 from chia_base.cbincode.util import from_bytes, to_bytes
 
-from hsms.core.signing_hints import SumHint, PathHint
-from hsms.core.unsigned_spend import UnsignedSpend
-from hsms.debug.debug_spend_bundle import debug_spend_bundle
-from hsms.puzzles.p2_delegated_puzzle_or_hidden_puzzle import (
+from hsmk.core.signing_hints import SumHint, PathHint
+from hsmk.core.unsigned_spend import UnsignedSpend
+from hsmk.debug.debug_spend_bundle import debug_spend_bundle
+from hsmk.puzzles.p2_delegated_puzzle_or_hidden_puzzle import (
     DEFAULT_HIDDEN_PUZZLE,
     puzzle_for_public_key_and_hidden_puzzle,
     solution_for_conditions,
     calculate_synthetic_offset,
 )
-from hsms.process.sign import sign, generate_synthetic_offset_signatures
-from hsms.puzzles.conlang import CREATE_COIN
-from hsms.util.byte_chunks import (
+from hsmk.process.sign import sign, generate_synthetic_offset_signatures
+from hsmk.puzzles.conlang import CREATE_COIN
+from hsmk.util.byte_chunks import (
     ChunkAssembler,
     chunks_for_zlib_blob,
     create_chunks_for_blob,
@@ -34,7 +34,7 @@ DEFAULT_HIDDEN_PUZZLE_HASH = DEFAULT_HIDDEN_PUZZLE.tree_hash()
 def test_lifecycle():
     """
     let's create three `CoinSpend` objects and generate a signing request
-    then pass it to the hsms0 tool for signatures
+    then pass it to the hsmk0 tool for signatures
     then reassemble the signatures
     """
 

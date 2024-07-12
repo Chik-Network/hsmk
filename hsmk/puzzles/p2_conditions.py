@@ -10,7 +10,7 @@ require a delegated puzzle program, so in those cases, this is just what
 the doctor ordered.
 """
 
-from clvm_rs import Program  # type: ignore
+from klvm_rs import Program  # type: ignore
 
 from chialisp_puzzles import load_puzzle  # type: ignore
 

@@ -1,4 +1,4 @@
-HSMS: hardware security module software/simulator
+HSMK: hardware security module software/simulator
 
 This project is intended to run on an air-gapped computer to sign chia spends using bls12_381 keys.
 
@@ -18,7 +18,7 @@ Tools
 
 Command-line tools installed include:
 
-- `hsms` - HSM sim that accepts `UnsignedSpend` objects and produces signatures, full or partial
+- `hsmk` - HSM sim that accepts `UnsignedSpend` objects and produces signatures, full or partial
 - `hsmgen` - generate secret keys
 - `hsmpk` - show public keys for secret keys
 - `hsmmerge` - merge signatures for a multisig spend

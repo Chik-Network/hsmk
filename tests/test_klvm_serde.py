@@ -8,17 +8,17 @@ import pytest
 from chia_base.bls12_381 import BLSSecretExponent
 from chia_base.core import Coin, CoinSpend
 from chia_base.meta.typing import GenericAlias
-from clvm_rs import Program  # type: ignore
+from klvm_rs import Program  # type: ignore
 
-from hsms.clvm_serde import (
+from hsmk.klvm_serde import (
     from_program_for_type,
     to_program_for_type,
     tuple_frugal,
     EncodingError,
     Frugal,
 )
-from hsms.core.signing_hints import SumHint, PathHint
-from hsms.core.unsigned_spend import (
+from hsmk.core.signing_hints import SumHint, PathHint
+from hsmk.core.unsigned_spend import (
     UnsignedSpend,
     from_storage,
     to_storage,

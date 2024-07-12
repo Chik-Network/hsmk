@@ -15,15 +15,15 @@ from chia_base.util.bech32 import bech32_encode
 
 import segno
 
-from hsms.consensus.conditions import conditions_by_opcode
-from hsms.core.unsigned_spend import UnsignedSpend
-from hsms.process.sign import conditions_for_coin_spend, sign
-from hsms.puzzles import conlang
-from hsms.util.byte_chunks import ChunkAssembler
-from hsms.util.qrint_encoding import a2b_qrint, b2a_qrint
+from hsmk.consensus.conditions import conditions_by_opcode
+from hsmk.core.unsigned_spend import UnsignedSpend
+from hsmk.process.sign import conditions_for_coin_spend, sign
+from hsmk.puzzles import conlang
+from hsmk.util.byte_chunks import ChunkAssembler
+from hsmk.util.qrint_encoding import a2b_qrint, b2a_qrint
 
 
-XCH_PER_MOJO = Decimal("1e12")
+XCK_PER_MOJO = Decimal("1e12")
 
 
 def unsigned_spend_from_blob(blob: bytes) -> UnsignedSpend:
@@ -94,9 +94,9 @@ def parse_private_key_file(args) -> List[BLSSecretExponent]:
 def summarize_unsigned_spend(unsigned_spend: UnsignedSpend, f=sys.stdout):
     print(file=f)
     for coin_spend in unsigned_spend.coin_spends:
-        xch_amount = Decimal(coin_spend.coin.amount) / XCH_PER_MOJO
+        xck_amount = Decimal(coin_spend.coin.amount) / XCK_PER_MOJO
         address = address_for_puzzle_hash(coin_spend.coin.puzzle_hash)
-        print(f"COIN SPENT: {xch_amount:0.12f} xch at address {address}", file=f)
+        print(f"COIN SPENT: {xck_amount:0.12f} xck at address {address}", file=f)
         conditions = conditions_for_coin_spend(coin_spend)
 
     print(file=f)
@@ -107,13 +107,13 @@ def summarize_unsigned_spend(unsigned_spend: UnsignedSpend, f=sys.stdout):
             puzzle_hash = create_coin.at("rf").atom
             address = address_for_puzzle_hash(puzzle_hash)
             amount = int(create_coin.at("rrf"))
-            xch_amount = Decimal(amount) / XCH_PER_MOJO
-            print(f"COIN CREATED: {xch_amount:0.12f} xch to {address}", file=f)
+            xck_amount = Decimal(amount) / XCK_PER_MOJO
+            print(f"COIN CREATED: {xck_amount:0.12f} xck to {address}", file=f)
     print(file=f)
 
 
 def address_for_puzzle_hash(puzzle_hash: bytes32) -> str:
-    return bech32_encode("xch", puzzle_hash)
+    return bech32_encode("xck", puzzle_hash)
 
 
 def check_ok():
@@ -121,7 +121,7 @@ def check_ok():
     return text.lower() == "ok"
 
 
-def hsms(args, parser):
+def hsmk(args, parser):
     wallet = parse_private_key_file(args)
     f = sys.stderr
     unsigned_spend_pipeline = create_unsigned_spend_pipeline(args.nochunks, f)
@@ -187,7 +187,7 @@ def create_parser() -> argparse.ArgumentParser:
 def main(argv=sys.argv[1:]):
     parser = create_parser()
     args = parser.parse_args(argv)
-    return hsms(args, parser)
+    return hsmk(args, parser)
 
 
 if __name__ == "__main__":

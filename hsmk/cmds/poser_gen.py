@@ -6,13 +6,13 @@ import argparse
 from chia_base.bls12_381 import BLSPublicKey
 from chia_base.core import Coin, CoinSpend
 
-from hsms.core.unsigned_spend import UnsignedSpend
-from hsms.puzzles.p2_delegated_puzzle_or_hidden_puzzle import (
+from hsmk.core.unsigned_spend import UnsignedSpend
+from hsmk.puzzles.p2_delegated_puzzle_or_hidden_puzzle import (
     puzzle_for_synthetic_public_key,
     solution_for_conditions,
 )
-from hsms.util.byte_chunks import chunks_for_zlib_blob
-from hsms.util.qrint_encoding import b2a_qrint
+from hsmk.util.byte_chunks import chunks_for_zlib_blob
+from hsmk.util.qrint_encoding import b2a_qrint
 
 
 DEFAULT_PARENT_COIN_ID = sha256(b"fake_id").digest()
@@ -30,7 +30,7 @@ def bytes32_fromhex(s: str) -> bytes:
 
 DESCRIPTION = (
     "Proof of secret exponent request generator.\n\n"
-    'Generate a fake "challenge coin" for the hsms to sign to prove ownership '
+    'Generate a fake "challenge coin" for the hsmk to sign to prove ownership '
     "of the private key corresponding to a given public key."
 )
 EPILOG = "Output is in qrint form."

@@ -1,8 +1,8 @@
 from dataclasses import is_dataclass, fields, MISSING
 from typing import Any, Callable, Optional, Tuple, Type, Union, get_type_hints
 
-from chia_base.meta.type_tree import ArgsType, CompoundLookup, OriginArgsType, TypeTree
-from chia_base.meta.typing import GenericAlias
+from chik_base.meta.type_tree import ArgsType, CompoundLookup, OriginArgsType, TypeTree
+from chik_base.meta.typing import GenericAlias
 
 from klvm_rs import Program  # type: ignore
 
@@ -27,7 +27,7 @@ class Frugal:
     pass
 
 
-# some helper methods to implement chia serialization
+# some helper methods to implement chik serialization
 #
 def read_bytes(p: Program) -> bytes:
     if p.atom is None:

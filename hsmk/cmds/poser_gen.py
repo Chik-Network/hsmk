@@ -3,8 +3,8 @@ from hashlib import sha256
 import argparse
 
 
-from chia_base.bls12_381 import BLSPublicKey
-from chia_base.core import Coin, CoinSpend
+from chik_base.bls12_381 import BLSPublicKey
+from chik_base.core import Coin, CoinSpend
 
 from hsmk.core.unsigned_spend import UnsignedSpend
 from hsmk.puzzles.p2_delegated_puzzle_or_hidden_puzzle import (

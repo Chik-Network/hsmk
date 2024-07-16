@@ -1,7 +1,7 @@
 import argparse
 
-from chia_base.cbincode import from_bytes
-from chia_base.core import SpendBundle
+from chik_base.cbincode import from_bytes
+from chik_base.core import SpendBundle
 
 from hsmk.debug.debug_spend_bundle import debug_spend_bundle
 

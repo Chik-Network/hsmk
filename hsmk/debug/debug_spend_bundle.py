@@ -1,7 +1,7 @@
 from typing import List
 
-from chia_base.core import Coin
-from chia_base.util.std_hash import std_hash
+from chik_base.core import Coin
+from chik_base.util.std_hash import std_hash
 
 from klvm_rs import Program  # type: ignore
 

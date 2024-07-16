@@ -2,9 +2,9 @@ from typing import List
 
 import argparse
 
-from chia_base.bls12_381 import BLSSignature
-from chia_base.core import SpendBundle
-from chia_base.cbincode import to_bytes
+from chik_base.bls12_381 import BLSSignature
+from chik_base.core import SpendBundle
+from chik_base.cbincode import to_bytes
 
 from hsmk.core.unsigned_spend import UnsignedSpend
 from hsmk.process.sign import generate_synthetic_offset_signatures

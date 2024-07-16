@@ -1,8 +1,8 @@
 from dataclasses import dataclass, field
 from typing import List, Tuple
 
-from chia_base.bls12_381 import BLSPublicKey, BLSSignature
-from chia_base.core import Coin, CoinSpend
+from chik_base.bls12_381 import BLSPublicKey, BLSSignature
+from chik_base.core import Coin, CoinSpend
 
 from klvm_rs import Program  # type: ignore
 

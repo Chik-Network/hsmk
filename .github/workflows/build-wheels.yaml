@@ -25,7 +25,7 @@ jobs:
 
     steps:
       - name: Add safe git directory
-        uses: Chia-Network/actions/git-mark-workspace-safe@main
+        uses: Chik-Network/actions/git-mark-workspace-safe@main
 
       - uses: actions/checkout@v4
         with:
@@ -62,7 +62,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set Env
-        uses: Chia-Network/actions/setjobenv@main
+        uses: Chik-Network/actions/setjobenv@main
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

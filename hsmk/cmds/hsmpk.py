@@ -1,6 +1,6 @@
 import sys
 
-from chia_base.bls12_381 import BLSSecretExponent
+from chik_base.bls12_381 import BLSSecretExponent
 
 
 def main(argv=sys.argv[1:]):

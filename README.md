@@ -1,6 +1,6 @@
 HSMK: hardware security module software/simulator
 
-This project is intended to run on an air-gapped computer to sign chia spends using bls12_381 keys.
+This project is intended to run on an air-gapped computer to sign chik spends using bls12_381 keys.
 
 
 Install

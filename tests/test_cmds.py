@@ -109,7 +109,7 @@ if __name__ == "__main__":  # pragma: no cover
 
 
 """
-Copyright 2023 Chia Network Inc
+Copyright 2023 Chik Network Inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

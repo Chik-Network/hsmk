@@ -8,9 +8,9 @@ import subprocess
 import sys
 import zlib
 
-from chia_base.atoms import bytes32
-from chia_base.bls12_381 import BLSSecretExponent, BLSSignature
-from chia_base.util.bech32 import bech32_encode
+from chik_base.atoms import bytes32
+from chik_base.bls12_381 import BLSSecretExponent, BLSSignature
+from chik_base.util.bech32 import bech32_encode
 
 
 import segno

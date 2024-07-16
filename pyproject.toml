@@ -1,17 +1,17 @@
 [build-system]
-requires = ["setuptools>=42", "wheel", "setuptools_scm[toml]>=6.2", "chialisp_builder==0.1.0"]
+requires = ["setuptools>=42", "wheel", "setuptools_scm[toml]>=6.2", "chiklisp_builder==0.1.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "hsmk"
-description = "Hardware security module simulator for chia bls12_381 signatures"
+description = "Hardware security module simulator for chik bls12_381 signatures"
 authors = [{ name = "Richard Kiss", email = "him@richardkiss.com" }]
 license = { file = "LICENSE" }
 readme = "README.md"
 dependencies = [
   "segno==1.4.1",
-  "chia_base>=0.1.5",
-  "chialisp_puzzles>=0.1.1",
+  "chik_base>=0.1.5",
+  "chiklisp_puzzles>=0.1.1",
 ]
 # version is defined with `setuptools_scm`
 dynamic = ["version"]

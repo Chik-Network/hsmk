@@ -1,9 +1,9 @@
 from dataclasses import dataclass
 from typing import List
 
-from chia_base.atoms import bytes32
-from chia_base.bls12_381 import BLSPublicKey, BLSSignature
-from chia_base.core import Coin, CoinSpend
+from chik_base.atoms import bytes32
+from chik_base.bls12_381 import BLSPublicKey, BLSSignature
+from chik_base.core import Coin, CoinSpend
 
 from klvm_rs import Program
 

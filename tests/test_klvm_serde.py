@@ -5,9 +5,9 @@ import random
 
 import pytest
 
-from chia_base.bls12_381 import BLSSecretExponent
-from chia_base.core import Coin, CoinSpend
-from chia_base.meta.typing import GenericAlias
+from chik_base.bls12_381 import BLSSecretExponent
+from chik_base.core import Coin, CoinSpend
+from chik_base.meta.typing import GenericAlias
 from klvm_rs import Program  # type: ignore
 
 from hsmk.klvm_serde import (
@@ -203,7 +203,7 @@ def test_serde_frugal():
 
 
 def test_subclasses():
-    # `chia-blockchain` has several int subclasses
+    # `chik-blockchain` has several int subclasses
 
     class Foo(int):
         pass

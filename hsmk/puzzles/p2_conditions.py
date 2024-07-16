@@ -12,7 +12,7 @@ the doctor ordered.
 
 from klvm_rs import Program  # type: ignore
 
-from chialisp_puzzles import load_puzzle  # type: ignore
+from chiklisp_puzzles import load_puzzle  # type: ignore
 
 MOD = load_puzzle("p2_conditions")
 

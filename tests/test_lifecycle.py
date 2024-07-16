@@ -2,8 +2,8 @@ import zlib
 
 from tests.generate import se_generate, bytes32_generate, uint256_generate
 
-from chia_base.core import Coin, CoinSpend, SpendBundle
-from chia_base.cbincode.util import from_bytes, to_bytes
+from chik_base.core import Coin, CoinSpend, SpendBundle
+from chik_base.cbincode.util import from_bytes, to_bytes
 
 from hsmk.core.signing_hints import SumHint, PathHint
 from hsmk.core.unsigned_spend import UnsignedSpend

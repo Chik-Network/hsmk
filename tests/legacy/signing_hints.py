@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Dict, List
 
-from chia_base.bls12_381 import BLSPublicKey, BLSSecretExponent
+from chik_base.bls12_381 import BLSPublicKey, BLSSecretExponent
 
 from .klvm_serialization import (
     klvm_to_list_of_ints,

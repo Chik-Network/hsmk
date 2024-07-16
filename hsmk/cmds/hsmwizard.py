@@ -7,7 +7,7 @@ import time
 
 import segno
 
-from chia_base.bls12_381 import BLSSecretExponent
+from chik_base.bls12_381 import BLSSecretExponent
 
 import hsmk.cmds.hsmk
 

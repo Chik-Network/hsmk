@@ -5,8 +5,8 @@ import zlib
 
 from klvm_rs import Program  # type: ignore
 
-from chia_base.bls12_381 import BLSPublicKey
-from chia_base.core import Coin, CoinSpend
+from chik_base.bls12_381 import BLSPublicKey
+from chik_base.core import Coin, CoinSpend
 
 from hsmk.core.signing_hints import SumHint, PathHint
 from hsmk.core.unsigned_spend import UnsignedSpend

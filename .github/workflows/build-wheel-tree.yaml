@@ -18,7 +18,7 @@ jobs:
     container: quay.io/pypa/manylinux_2_28_x86_64
     steps:
       - name: Add safe git directory
-        uses: Chia-Network/actions/git-mark-workspace-safe@main
+        uses: Chik-Network/actions/git-mark-workspace-safe@main
 
       - uses: actions/checkout@v4
         with:

@@ -2,9 +2,9 @@ from dataclasses import dataclass
 from typing import Iterable, List, Optional, Tuple
 from weakref import WeakKeyDictionary
 
-from chia_base.atoms import hexbytes
-from chia_base.bls12_381 import BLSPublicKey, BLSSecretExponent
-from chia_base.core import CoinSpend
+from chik_base.atoms import hexbytes
+from chik_base.bls12_381 import BLSPublicKey, BLSSecretExponent
+from chik_base.core import CoinSpend
 
 from klvm_rs import Program  # type: ignore
 

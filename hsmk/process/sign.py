@@ -6,7 +6,7 @@ from chik_base.atoms import hexbytes
 from chik_base.bls12_381 import BLSPublicKey, BLSSecretExponent
 from chik_base.core import CoinSpend
 
-from klvm_rs import Program  # type: ignore
+from clvk_rs import Program  # type: ignore
 
 from hsmk.core.signing_hints import SumHint, SumHints, PathHint, PathHints
 from hsmk.core.unsigned_spend import SignatureInfo, UnsignedSpend

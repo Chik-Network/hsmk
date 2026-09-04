@@ -3,9 +3,9 @@ from typing import List
 from chik_base.core import Coin
 from chik_base.util.std_hash import std_hash
 
-from klvm_rs import Program  # type: ignore
+from clvk_rs import Program  # type: ignore
 
-from hsmk.klvm.disasm import disassemble as bu_disassemble, KEYWORD_FROM_ATOM
+from hsmk.clvk.disasm import disassemble as bu_disassemble, KEYWORD_FROM_ATOM
 from hsmk.consensus.conditions import conditions_by_opcode
 from hsmk.process.sign import generate_verify_pairs
 from hsmk.puzzles import conlang
@@ -50,7 +50,7 @@ def debug_spend_bundle(
 ) -> None:
     """
     Print a lot of useful information about a `SpendBundle` that might help with
-    debugging its klvm.
+    debugging its clvk.
     """
 
     pks = []

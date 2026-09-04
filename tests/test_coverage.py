@@ -4,7 +4,7 @@ import pathlib
 import tempfile
 import zlib
 
-from klvm_rs import Program
+from clvk_rs import Program
 
 from hsmk.process.sign import verify_pairs_for_conditions
 from hsmk.puzzles.conlang import AGG_SIG_ME, AGG_SIG_UNSAFE

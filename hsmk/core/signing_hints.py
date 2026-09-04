@@ -4,7 +4,7 @@ from typing import Dict, List
 
 from chik_base.bls12_381 import BLSPublicKey, BLSSecretExponent
 
-from hsmk.klvm_serde import Frugal
+from hsmk.clvk_serde import Frugal
 
 
 @dataclass

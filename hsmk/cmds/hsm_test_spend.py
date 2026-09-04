@@ -3,7 +3,7 @@ import hashlib
 import sys
 import zlib
 
-from klvm_rs import Program  # type: ignore
+from clvk_rs import Program  # type: ignore
 
 from chik_base.bls12_381 import BLSPublicKey
 from chik_base.core import Coin, CoinSpend

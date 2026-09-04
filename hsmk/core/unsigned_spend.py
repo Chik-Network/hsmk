@@ -4,9 +4,9 @@ from typing import List, Tuple
 from chik_base.bls12_381 import BLSPublicKey, BLSSignature
 from chik_base.core import Coin, CoinSpend
 
-from klvm_rs import Program  # type: ignore
+from clvk_rs import Program  # type: ignore
 
-from hsmk.klvm_serde import (
+from hsmk.clvk_serde import (
     to_program_for_type,
     from_program_for_type,
 )

@@ -59,7 +59,7 @@ following mechanism:
 
 import hashlib
 
-from klvm_rs import Program  # type: ignore
+from clvk_rs import Program  # type: ignore
 
 from chik_base.atoms import bytes32
 from chik_base.bls12_381 import BLSPublicKey, BLSSecretExponent

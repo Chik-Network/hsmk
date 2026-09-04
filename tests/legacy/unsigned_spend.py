@@ -5,12 +5,12 @@ from chik_base.atoms import bytes32
 from chik_base.bls12_381 import BLSPublicKey, BLSSignature
 from chik_base.core import Coin, CoinSpend
 
-from klvm_rs import Program
+from clvk_rs import Program
 
-from .klvm_serialization import (
+from .clvk_serialization import (
     as_atom,
     as_int,
-    klvm_to_list,
+    clvk_to_list,
     no_op,
     transform_dict,
     transform_dict_by_key,
@@ -35,17 +35,17 @@ class UnsignedSpend:
     agg_sig_me_network_suffix: bytes32
 
     def as_program(self):
-        as_klvm = [("a", self.agg_sig_me_network_suffix)]
-        cs_as_klvm = [
+        as_clvk = [("a", self.agg_sig_me_network_suffix)]
+        cs_as_clvk = [
             [_.coin.parent_coin_info, _.puzzle_reveal, _.coin.amount, _.solution]
             for _ in self.coin_spends
         ]
-        as_klvm.append(("c", cs_as_klvm))
-        sh_as_klvm = [_.as_program() for _ in self.sum_hints]
-        as_klvm.append(("s", sh_as_klvm))
-        ph_as_klvm = [_.as_program() for _ in self.path_hints]
-        as_klvm.append(("p", ph_as_klvm))
-        self_as_program = Program.to(as_klvm)
+        as_clvk.append(("c", cs_as_clvk))
+        sh_as_clvk = [_.as_program() for _ in self.sum_hints]
+        as_clvk.append(("s", sh_as_clvk))
+        ph_as_clvk = [_.as_program() for _ in self.path_hints]
+        as_clvk.append(("p", ph_as_clvk))
+        self_as_program = Program.to(as_clvk)
         return self_as_program
 
     @classmethod
@@ -69,8 +69,8 @@ def coin_spend_from_program(program: Program) -> CoinSpend:
 
 
 UNSIGNED_SPEND_TRANSFORMER = {
-    "c": lambda x: klvm_to_list(x, coin_spend_from_program),
-    "s": lambda x: klvm_to_list(x, SumHint.from_program),
-    "p": lambda x: klvm_to_list(x, PathHint.from_program),
+    "c": lambda x: clvk_to_list(x, coin_spend_from_program),
+    "s": lambda x: clvk_to_list(x, SumHint.from_program),
+    "p": lambda x: clvk_to_list(x, PathHint.from_program),
     "a": lambda x: x.atom,
 }

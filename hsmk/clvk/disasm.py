@@ -1,9 +1,9 @@
 import io
 
-from klvm_rs import Program  # type: ignore
+from clvk_rs import Program  # type: ignore
 
 
-# this differs from klvm_tools in that it adds the single quote
+# this differs from clvk_tools in that it adds the single quote
 # and promises to handle it carefully
 
 PRINTABLE = (

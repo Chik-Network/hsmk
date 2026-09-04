@@ -1,6 +1,6 @@
 from typing import Dict, List
 
-from klvm_rs import Program  # type: ignore
+from clvk_rs import Program  # type: ignore
 
 
 def conditions_by_opcode(conditions: Program) -> Dict[int, List[Program]]:
